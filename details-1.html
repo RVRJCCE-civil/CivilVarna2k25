@@ -1,38 +1,342 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRITHI QUEST Details</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="detail-container">
-        <a href="index.html" class="rules-button" style="width: auto; margin-bottom: 20px; background-color: #3f51b5;">← Back to Events</a>
-        <h2>KRITHI QUEST (A Technical Quiz Competition)</h2>
-        <img src="quiz_image.jpg" alt="Technical Quiz Image">
-        <p>Description: KRITHI QUEST (Technical Quiz) is an exciting event to explore civil engineering concepts and excellence of its legacy. Participants can enjoy the mediation of quiz, nerves, goosebumps and tranquility. Participants can win exciting prizes/participation certificate. The questions are from civil engineering domain.</p>
-        <p class="card-details">Team Size: Two members (B.Tech., Civil Engineering Students)</p>
-        <p class="fee-tag" style="display: inline-block;">No Registration Fee</p>
-        
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4xISrCNE46HVrng8OCjT9PuiPrsH_Niq_echxjsxZZQUUkg/viewform?usp=header" target="_blank" class="rules-button" style="background-color: #4CAF50; margin-top: 15px;">Register for KRITHI QUEST</a>
-        
-        <h3>Rules and Guidelines</h3>
-        <ul>
-            <li>A team consists of two members (B.Tech., Civil Engineering Students).</li>
-            <li>Preliminary test will be conducted to select SIX TEAMS for final quiz event.</li>
-            <li>In the final quiz event, there will be 3-rounds: a) Team Question Round, b) Picture Question Round, c) Rapid Fire Round.</li>
-            <li>Three prizes will be awarded to the teams who secured first, second and third positions.</li>
-        </ul>
+/* Define Maroon Color (Using a standard deep shade) */
+:root {
+    --maroon: #800000;
+    --light-maroon: #a00000;
+    --beige-bg: #fff8e1; /* Light background for committee boxes */
+}
 
-        <h3>Event Coordinators</h3>
-        <table class="coordinator-table">
-            <tr><th>Role</th><th>Name</th><th>Details</th><th>Contact</th></tr>
-            <tr><td>Faculty Coordinator</td><td>Dr. M.L.N. Krishna Sai</td><td>Associate Professor, C.E.</td><td>9440644536</td></tr>
-            <tr><td>Faculty Coordinator</td><td>Sri. R.Vaishnav Kumar</td><td>Assistant Professor, C.E.</td><td>9502062442</td></tr>
-            <tr><td>Student Coordinator</td><td>A. Chinni Krishna Chaithanya</td><td>Y23CE001, B.Tech 3rd year</td><td>9441285988</td></tr>
-            <tr><td>Student Coordinator</td><td>P. Sohini</td><td>Y24CE093, B.Tech 2nd year</td><td>9392748776</td></tr>
-        </table>
-    </div>
-</body>
-</html>
+/* General Reset and Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f7; 
+    color: #333;
+}
+
+/* Header Styling */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    text-align: center;
+    color: white;
+    background-image: url('header_bg_image.jpg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    min-height: 250px;
+    position: relative;
+}
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for contrast */
+    z-index: 1;
+}
+
+.logo-left, .logo-right, .header-content {
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.header-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.header-content {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Specific Header Font Styles (Maroon, Bold, Large) */
+.college-title-style {
+    margin: 0;
+    font-size: 3.5em; /* Same size for college name and main title */
+    color: var(--maroon);
+    font-weight: 800;
+}
+
+.maroon-bold-text {
+    font-size: 1.3em; /* Increased size for department/type/location */
+    font-weight: bold;
+    color: var(--maroon);
+    margin: 5px 0;
+}
+
+/* Gradient for VARNA */
+.varna-gradient {
+    /* Define gradient colors (e.g., from red to gold) */
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #ffaf5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Events Grid Section */
+.events-grid-section {
+    padding: 40px 20px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Event Card Styling */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #00bcd4;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.6em;
+    color: #004d40;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fee-tag {
+    background-color: #4caf50; 
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.7em;
+    letter-spacing: 0.5px;
+}
+
+.card-description {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    color: #555;
+    min-height: 40px; 
+}
+
+.card-details {
+    font-size: 0.9em;
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+/* Button Styling (Maroon instead of Orange) */
+.rules-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--maroon); /* Maroon color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.rules-button:hover {
+    background-color: var(--light-maroon);
+}
+
+
+/* =================================
+   COMMITTEE SECTION STYLING (UNIFORM)
+   ================================= */
+.committee-section {
+    padding: 40px 5%;
+    background-color: #f7f9fb;
+    border-top: 5px solid #e0e0e0;
+}
+
+.committee-block {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.committee-heading {
+    text-align: center;
+    color: var(--maroon); /* Maroon heading */
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--light-maroon); /* Maroon border */
+    padding-bottom: 10px;
+}
+
+/* Flex containers for committee members */
+.monitoring-grid-single {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.monitoring-grid-two {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.monitoring-grid-three {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Individual Committee Box Styling - UNIFORM COLOR */
+.committee-box {
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    flex: 1; 
+    max-width: 300px;
+}
+
+/* Define the single, uniform style */
+.committee-uniform-style {
+    background-color: var(--beige-bg) !important; 
+    border: 2px solid var(--maroon) !important;
+}
+
+.committee-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Text styles within boxes */
+.committee-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--maroon); /* Maroon name */
+    margin: 5px 0;
+}
+
+.committee-role, .committee-dept {
+    font-size: 0.9em;
+    color: #555;
+    margin: 3px 0;
+}
+
+.committee-contact {
+    font-size: 1em;
+    font-weight: bold;
+    color: #d84315; /* Contact number emphasis */
+    margin: 5px 0 0;
+}
+
+
+/* Detail Page Structure (For all detail-X.html) */
+.detail-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container h2 {
+    color: #004d40;
+    border-bottom: 2px solid #00bcd4;
+    padding-bottom: 10px;
+}
+
+.detail-container h3 {
+    color: #00bcd4;
+    margin-top: 25px;
+}
+
+/* Coordinator Table styles remain the same for detail pages */
+.coordinator-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.coordinator-table th, .coordinator-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.coordinator-table th {
+    background-color: #e0f7fa;
+    color: #004d40;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 5%;
+    }
+
+    .header-logo {
+        height: 80px;
+        margin: 10px 0;
+    }
+
+    .college-title-style {
+        font-size: 2.5em;
+    }
+    
+    .maroon-bold-text {
+        font-size: 1em; 
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .monitoring-grid-two, .monitoring-grid-three {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .committee-box {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}

@@ -1,9 +1,16 @@
+/* Define Maroon Color (Using a standard deep shade) */
+:root {
+    --maroon: #800000;
+    --light-maroon: #a00000;
+    --beige-bg: #fff8e1; /* Light background for committee boxes */
+}
+
 /* General Reset and Typography */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f7; /* Light background */
+    background-color: #f0f4f7; 
     color: #333;
 }
 
@@ -28,7 +35,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* 40% opaque black overlay */
+    background: rgba(0, 0, 0, 0.5); /* Overlay for contrast */
     z-index: 1;
 }
 
@@ -40,7 +47,7 @@ body {
     height: 100px;
     width: auto;
     object-fit: contain;
-    background: rgba(255, 255, 255, 0.9); /* Slight white background for logo visibility */
+    background: rgba(255, 255, 255, 0.9); 
     border-radius: 5px;
     padding: 5px;
 }
@@ -49,22 +56,29 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.college-name, .department-name {
+/* Specific Header Font Styles (Maroon, Bold, Large) */
+.college-title-style {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 3.5em; /* Same size for college name and main title */
+    color: var(--maroon);
+    font-weight: 800;
 }
 
-.event-title {
-    font-size: 3.5em;
-    margin: 10px 0;
-    color: #00bcd4; /* Cyan/Teal highlight */
-    letter-spacing: 2px;
+.maroon-bold-text {
+    font-size: 1.3em; /* Increased size for department/type/location */
+    font-weight: bold;
+    color: var(--maroon);
+    margin: 5px 0;
 }
 
-.fest-type, .date-venue {
-    font-size: 1.2em;
-    font-weight: 300;
+/* Gradient for VARNA */
+.varna-gradient {
+    /* Define gradient colors (e.g., from red to gold) */
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #ffaf5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 
 /* Events Grid Section */
 .events-grid-section {
@@ -117,7 +131,7 @@ body {
 }
 
 .fee-tag {
-    background-color: #4caf50; /* Green tag */
+    background-color: #4caf50; 
     color: white;
     padding: 4px 10px;
     border-radius: 5px;
@@ -130,7 +144,7 @@ body {
     font-size: 0.95em;
     margin-bottom: 15px;
     color: #555;
-    min-height: 40px; /* Ensures consistent card height */
+    min-height: 40px; 
 }
 
 .card-details {
@@ -139,12 +153,12 @@ body {
     font-weight: bold;
 }
 
-/* Button Styling (Used for event links) */
+/* Button Styling (Maroon instead of Orange) */
 .rules-button {
     display: block;
-    width: 100%;
+    width: 93%;
     padding: 15px;
-    background-color: #f57c00; /* Orange color */
+    background-color: var(--maroon); /* Maroon color */
     color: white;
     text-align: center;
     text-decoration: none;
@@ -155,12 +169,12 @@ body {
 }
 
 .rules-button:hover {
-    background-color: #e65100;
+    background-color: var(--light-maroon);
 }
 
 
 /* =================================
-   COMMITTEE SECTION STYLING
+   COMMITTEE SECTION STYLING (UNIFORM)
    ================================= */
 .committee-section {
     padding: 40px 5%;
@@ -175,15 +189,15 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .committee-heading {
     text-align: center;
-    color: #3f51b5;
+    color: var(--maroon); /* Maroon heading */
     margin-bottom: 20px;
     font-size: 1.5em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid var(--light-maroon); /* Maroon border */
     padding-bottom: 10px;
 }
 
@@ -208,52 +222,33 @@ body {
     margin: 20px 0;
 }
 
-/* Individual Committee Box Styling */
+/* Individual Committee Box Styling - UNIFORM COLOR */
 .committee-box {
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.2s;
-    background-color: #fcfcfc;
+    flex: 1; 
+    max-width: 300px;
+}
+
+/* Define the single, uniform style */
+.committee-uniform-style {
+    background-color: var(--beige-bg) !important; 
+    border: 2px solid var(--maroon) !important;
 }
 
 .committee-box:hover {
     transform: translateY(-3px);
-}
-
-/* Specific Box Styles */
-.hod-box {
-    background-color: #fff3e0; /* Light Orange/Cream */
-    border: 2px solid #ff9800;
-    max-width: 350px;
-}
-
-.assoc-box {
-    flex: 1;
-    max-width: 300px;
-    background-color: #e0f7fa; /* Light Cyan */
-    border: 1px solid #00bcd4;
-}
-
-.convener-box {
-    background-color: #e8eaf6; /* Light Blue */
-    border: 2px solid #3f51b5;
-    max-width: 350px;
-}
-
-.student-box {
-    flex: 1;
-    background-color: #f1f8e9; /* Light Green */
-    border: 1px solid #8bc34a;
-    padding: 10px 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Text styles within boxes */
 .committee-name {
     font-size: 1.1em;
     font-weight: bold;
-    color: #333;
+    color: var(--maroon); /* Maroon name */
     margin: 5px 0;
 }
 
@@ -292,13 +287,7 @@ body {
     margin-top: 25px;
 }
 
-.detail-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
+/* Coordinator Table styles remain the same for detail pages */
 .coordinator-table {
     width: 100%;
     border-collapse: collapse;
@@ -330,8 +319,12 @@ body {
         margin: 10px 0;
     }
 
-    .event-title {
+    .college-title-style {
         font-size: 2.5em;
+    }
+    
+    .maroon-bold-text {
+        font-size: 1em; 
     }
 
     .events-grid {
@@ -342,7 +335,7 @@ body {
         flex-direction: column;
         gap: 15px;
     }
-    .assoc-box, .student-box {
+    .committee-box {
         max-width: 90%;
         margin: 0 auto;
     }
