@@ -1,491 +1,372 @@
-/* Custom CSS Variables */
+/* New Color Palette Definitions */
 :root {
-    --primary-color: #800000; /* Maroon - Primary brand color for text/accents/contacts */
-    --secondary-color: #c08d4a; /* Golden Brown - Accent/Highlight color */
-    --header-bg-color: #FFF0F5; /* Lightest Pink Shade (Lavender Blush) - Used for overlay color */
-    --background-color: #f4f4f9; /* Light Gray/Off-white */
-    --text-color: #333; 
-    --light-text-color: #f9f9f9; 
-    --card-bg-color: #fff; 
-    --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    --border-radius: 8px;
-
-    /* Header text color (MAROON - Bright Accent) */
-    --bright-accent-color: var(--primary-color); 
-    
-    /* NEW: Dark Blue for Navbar (Task Bar) */
-    --nav-bg-color: #003366; 
-    --nav-text-color: #ffffff; 
-
-    /* VARNA Color Palette (For the multi-colored word) */
-    --varna-color-1: #e9967a; 
-    --varna-color-2: #daa520; 
-    --varna-color-3: #87cefa; 
-    --varna-color-4: #3cb371; 
-    --varna-color-5: #ff69b4; 
+    --maroon-dark: #800000;      /* Main dark accent */
+    --maroon-light: #A00000;     /* Lighter maroon for hover/accents */
+    --cream-light: #FFFDD0;      /* Main light background color */
+    --cream-dark: #FDFCE0;       /* Slightly darker cream for contrast */
+    --green-shade: #4CAF50;      /* For registration buttons, success */
+    --pink-shade: #E91E63;       /* Secondary accent, borders */
+    --text-dark: #333333;        /* General dark text */
+    --text-light: #666666;       /* General light text */
 }
 
-/* Global Styles and Typography */
+/* General Reset and Typography */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    background-color: var(--cream-light); /* Main body background */
+    color: var(--text-dark);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-/* Dark color headers like MAROON */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--primary-color); 
-    margin-top: 0;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-color);
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #a06e30; 
-}
-
-/* Header Section - IMAGE BACKGROUND with Pink Overlay */
-.header {
-    /* Updated to use a background image */
-    background-image: url('header_bg_image.jpg'); 
+/* Header Styling */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    text-align: center;
+    color: white; /* Text color on header background */
+    background-image: url('header_bg_image.jpg'); /* Your background image */
     background-size: cover;
     background-position: center;
+    min-height: 250px;
     position: relative;
-    padding: 30px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden; 
 }
-
-/* Background Overlay for text readability (Lightest Pink Shade with transparency) */
-.header::before {
+.header-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 240, 245, 0.85); /* Lightest Pink (Lavender Blush) with 85% opacity */
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for contrast */
+    z-index: 1;
 }
 
-/* All header content must be above the overlay */
-.header-branding-container, .header h1, .tagline {
-    position: relative; 
-    z-index: 1; 
+.logo-left, .logo-right, .header-content {
+    z-index: 2; /* Ensure content is above the overlay */
 }
 
-/* Header Branding Container (Logos and Info) */
-.header-branding-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto 15px auto;
-    padding: 0 10px;
-}
-
-.college-info-center {
-    flex-grow: 1;
-    text-align: center;
-    padding: 0 10px;
-}
-
-/* UPDATED: Reduced logo size to give more space to college name */
-.logo-placeholder {
-    width: 60px; 
-    height: 60px; 
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
-}
-
-.logo-placeholder img {
-    height: 100%;
-    width: 100%;
+.header-logo {
+    height: 100px;
+    width: auto;
     object-fit: contain;
+    background: rgba(255, 255, 255, 0.9); /* White background for logos */
+    border-radius: 5px;
+    padding: 5px;
 }
 
-/* NEW: Header Text Sizing for Equal Titles and Increased Department/Fest Info */
-/* These are largely controlled by inline styles in index.html, but maintained here for context */
-.header h2, .header h1 {
-    font-size: 2.5em; 
+.header-content {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Specific Header Font Styles (Maroon, Bold, Large) */
+.college-title-style {
+    margin: 0;
+    font-size: 3.5em; /* Same size for college name and main title */
+    color: var(--maroon-dark); /* College and Event Title in Maroon */
+    font-weight: 800;
+}
+
+.maroon-bold-text {
+    font-size: 1.3em; /* Increased size for department/type/location */
+    font-weight: bold;
+    color: var(--maroon-dark); /* Department, Fest Type, Date/Venue in Maroon */
     margin: 5px 0;
-    line-height: 1.1;
 }
 
-.college-info-center p {
-    font-size: 1.3em; 
-    color: var(--bright-accent-color);
-    margin: 5px 0 0 0;
+/* Gradient for VARNA (using pink and green shades) */
+.varna-gradient {
+    background: linear-gradient(90deg, var(--pink-shade), var(--green-shade));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.tagline {
-    font-size: 1.6em; 
-    font-weight: 500;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
+
+/* Events Grid Section */
+.events-grid-section {
+    padding: 40px 20px;
+    background-color: var(--cream-light); /* Background for events section */
 }
 
-/* Multi-colored VARNA */
-.varna-v, .varna-a1, .varna-r, .varna-n, .varna-a2 {
-    font-weight: 900;
-    letter-spacing: 2px;
-    display: inline-block;
-    padding: 0 1px; 
-}
-.varna-v { color: var(--varna-color-1); }
-.varna-a1 { color: var(--varna-color-2); }
-.varna-r { color: var(--varna-color-3); }
-.varna-n { color: var(--varna-color-4); }
-.varna-a2 { color: var(--varna-color-5); }
-
-
-/* Navigation Bar (The "Task Bar") - UPDATED TO DARK BLUE */
-.nav, .navbar {
-    background-color: var(--nav-bg-color); 
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;
+.events-grid-section h2 {
     text-align: center;
+    color: var(--maroon-dark); /* Section heading color */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--pink-shade); /* Accent border */
+    padding-bottom: 10px;
 }
 
-.nav a, .navbar a {
-    color: var(--nav-text-color); /* White text for dark blue background */
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1em;
-    padding: 5px 10px;
-    margin: 0 15px;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s, color 0.3s;
-    display: inline-block; /* Allows margins and padding */
-}
-
-.nav a:hover, .navbar a:hover {
-    color: var(--secondary-color); 
-    border-bottom: 2px solid var(--secondary-color);
-}
-
-
-/* Events Grid Section (index.html) */
-.event-grid {
+.events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Event Card Styling */
 .event-card {
-    background-color: var(--card-bg-color);
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    background: var(--cream-dark); /* Card background */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    border: 1px solid var(--pink-shade); /* Pink border for cards */
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-.event-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 5px;
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--maroon-dark); /* Maroon accent for image border */
 }
 
-.event-content .tagline-event {
-    color: var(--secondary-color);
-    font-style: italic;
-    font-size: 0.9em;
-    margin-bottom: 10px;
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
 }
 
-.event-content .description {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Allows it to take up available space */
-}
-
-.event-content .prize-info {
-    font-size: 1.1em;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.explore-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    text-align: center;
-    font-weight: 700;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-top: 15px;
-}
-
-.explore-button:hover {
-    background-color: #a00000;
-}
-
-/* Committee Section (index.html) */
-.committee-block {
-    background-color: var(--card-bg-color);
-    padding: 30px 20px;
-    margin: 30px auto;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.committee-row {
+.card-title {
+    font-size: 1.6em;
+    color: var(--maroon-dark); /* Card title in maroon */
+    margin-top: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.committee-row.three-cols .committee-group {
-    flex: 1 1 calc(33.333% - 20px);
-    min-width: 280px; 
-}
-
-.committee-row.two-cols .committee-group {
-    flex: 1 1 calc(50% - 20px);
-    min-width: 350px; 
-}
-
-.committee-hod-center {
-    max-width: 600px; /* Center HOD/Convener in a narrower box */
-    margin: 20px auto 10px auto; 
-    text-align: center;
-}
-
-/* UPDATED: Committee/Coordinator Box Styling - Added text-align: center */
-.committee-group, .coord-item {
-    padding: 10px; /* Padding for the "text box" effect */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: var(--border-radius); /* Rounded corners */
-    background-color: var(--background-color); /* Light background for the box */
-    margin-bottom: 10px; /* Space between boxes */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    text-align: center; /* ALIGNMENT FIX: Ensures text inside the box is centered */
-}
-
-/* NEW: Decreased distance between name and contact */
-.committee-group p, .coord-item p {
-    margin: 2px 0; 
-}
-
-.committee-group strong, .coord-item strong {
-    font-size: 1.1em;
-    color: var(--primary-color);
-}
-
-
-/* Detail Page Specific Styles */
-.detail-content-wrapper {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.detail-instructions, .detail-registration {
-    background-color: var(--card-bg-color);
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1;
-}
-
-.detail-instructions {
-    flex: 2; /* Instructions take up more width */
-}
-
-.detail-registration {
-    flex: 1; /* Registration details are narrower */
-}
-
-
-.section-title {
-    text-align: center;
-    border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.detail-instructions h4, .detail-registration h4 {
-    color: var(--primary-color);
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    font-size: 1.3em;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.detail-instructions ul {
-    list-style: none;
-    padding-left: 0;
+.fee-tag {
+    background-color: var(--green-shade); /* Green for 'No Registration Fee' */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.7em;
+    letter-spacing: 0.5px;
 }
 
-.detail-instructions ul li {
-    margin-bottom: 10px;
-    padding-left: 1.5em; 
-    position: relative;
-    color: #555;
+.card-description {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    min-height: 40px; 
 }
 
-.detail-instructions ul li::before {
-    content: 'Ø'; 
-    color: var(--secondary-color); 
-    font-weight: bold; 
-    display: inline-block;
-    width: 1.5em;
-    margin-left: -1.5em;
+.card-details {
+    font-size: 0.9em;
+    color: var(--pink-shade); /* Card details in pink shade */
+    font-weight: bold;
 }
 
-/* Registration Details styling */
-.reg-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    padding: 5px 0;
-    border-bottom: 1px dotted #ddd;
-}
-
-.reg-label {
-    font-weight: 500;
-    color: #555;
-}
-
-.reg-value {
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-/* Coordinator Styles (within detail pages) */
-.coord-heading {
-    margin-top: 25px !important;
-}
-
-.coord-name {
-    font-weight: 700;
-    color: var(--primary-color);
-    margin: 2px 0 2px 0; /* Decreased distance - same as committee-group p */
-    font-size: 1.1em;
-}
-
-.coord-designation {
-    font-size: 1em;
-    color: #555;
-    margin: 2px 0; /* Decreased distance - same as committee-group p */
-}
-
-/* Contact numbers are styled with primary color */
-.coord-contact {
-    font-weight: 500;
-    color: var(--primary-color);
-    margin: 2px 0 0 0; /* Decreased distance - same as committee-group p */
-}
-
-.register-button {
+/* Button Styling (Maroon) */
+.rules-button {
     display: block;
-    width: 93%;
+    width: 100%;
     padding: 15px;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
+    background-color: var(--maroon-dark); /* Maroon button */
+    color: white;
     text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-radius: var(--border-radius);
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1em;
     transition: background-color 0.3s;
-    margin-top: 20px;
 }
 
-.register-button:hover {
-    background-color: #a00000;
+.rules-button:hover {
+    background-color: var(--maroon-light); /* Lighter maroon on hover */
 }
 
-/* Footer */
-.footer {
-    background-color: #333;
-    color: rgba(255, 255, 255, 0.7);
+
+/* =================================
+   COMMITTEE SECTION STYLING (UNIFORM)
+   ================================= */
+.committee-section {
+    padding: 40px 5%;
+    background-color: var(--cream-dark); /* Committee section background */
+    border-top: 5px solid var(--pink-shade); /* Pink border at top */
+}
+
+.committee-section h2 {
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    color: var(--maroon-dark);
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--pink-shade);
+    padding-bottom: 10px;
 }
 
-.footer a {
-    color: var(--secondary-color);
-    margin: 0 10px;
+.committee-block {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    border: 1px solid var(--pink-shade); /* Pink border for block */
+    border-radius: 8px;
+    background: var(--cream-light); /* Block background */
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-    .detail-content-wrapper {
-        flex-direction: column;
-    }
+.committee-heading {
+    text-align: center;
+    color: var(--maroon-dark); /* Maroon heading */
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--maroon-light); /* Maroon border */
+    padding-bottom: 10px;
 }
 
+/* Flex containers for committee members */
+.monitoring-grid-single {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.monitoring-grid-two {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.monitoring-grid-three {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Individual Committee Box Styling - UNIFORM COLOR */
+.committee-box {
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    flex: 1; 
+    max-width: 300px;
+}
+
+/* Define the single, uniform style using the new palette */
+.committee-uniform-style {
+    background-color: var(--cream-dark) !important; /* Cream background for boxes */
+    border: 2px solid var(--pink-shade) !important; /* Pink border for boxes */
+}
+
+.committee-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Text styles within boxes */
+.committee-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--maroon-dark); /* Maroon name */
+    margin: 5px 0;
+}
+
+.committee-role, .committee-dept {
+    font-size: 0.9em;
+    color: var(--text-light); /* Lighter text for roles */
+    margin: 3px 0;
+}
+
+.committee-contact {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--green-shade); /* Contact number in green shade */
+    margin: 5px 0 0;
+}
+
+
+/* Detail Page Structure (For all detail-X.html) */
+.detail-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: var(--cream-dark); /* Detail page background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--pink-shade); /* Pink border for detail container */
+}
+
+.detail-container h2 {
+    color: var(--maroon-dark); /* Detail H2 in maroon */
+    border-bottom: 2px solid var(--pink-shade); /* Pink border */
+    padding-bottom: 10px;
+}
+
+.detail-container h3 {
+    color: var(--green-shade); /* Detail H3 in green shade */
+    margin-top: 25px;
+}
+
+/* Coordinator Table styles remain the same for detail pages */
+.coordinator-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.coordinator-table th, .coordinator-table td {
+    border: 1px solid var(--pink-shade); /* Pink border for table */
+    padding: 10px;
+    text-align: left;
+}
+
+.coordinator-table th {
+    background-color: var(--maroon-light); /* Maroon background for table headers */
+    color: white;
+}
+.coordinator-table td {
+    background-color: var(--cream-light); /* Cream background for table cells */
+    color: var(--text-dark);
+}
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .header-branding-container {
+    .header-container {
         flex-direction: column;
+        text-align: center;
+        padding: 20px 5%;
     }
 
-    .college-info-center {
-        order: 3; /* Move info center below logos on small screens */
-        margin-top: 15px;
+    .header-logo {
+        height: 80px;
+        margin: 10px 0;
     }
 
-    .college-logo {
-        order: 1;
+    .college-title-style {
+        font-size: 2.5em;
     }
     
-    .event-logo {
-        order: 2;
+    .maroon-bold-text {
+        font-size: 1em; 
     }
 
-    .header h2, .header h1 {
-        font-size: 2em;
-    }
-
-    .college-info-center p, .tagline {
-        font-size: 1.2em;
-    }
-
-    .event-grid {
+    .events-grid {
         grid-template-columns: 1fr;
     }
     
-    .committee-row.three-cols .committee-group {
-        flex: 1 1 100%;
+    .monitoring-grid-two, .monitoring-grid-three {
+        flex-direction: column;
+        gap: 15px;
     }
-
-    .committee-row.two-cols .committee-group {
-        flex: 1 1 100%;
+    .committee-box {
+        max-width: 90%;
+        margin: 0 auto;
     }
 }
