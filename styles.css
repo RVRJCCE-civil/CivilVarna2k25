@@ -4,17 +4,20 @@
     --secondary-color: #c08d4a; /* Golden Brown - Accent/Highlight color */
     --background-color: #f4f4f9; /* Light Gray/Off-white */
     --text-color: #333; /* Dark text */
-    --light-text-color: #f9f9f9; /* Light text for dark backgrounds */
+    --light-text-color: #f9f9f9; /* White/Off-white */
     --card-bg-color: #fff; /* White card background */
     --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     --border-radius: 8px;
 
-    /* NEW: Varna Color Palette (Colors of the rainbow/civil elements) */
-    --varna-color-1: #ff6347; /* Tomato Red - V */
-    --varna-color-2: #ffd700; /* Gold - A */
-    --varna-color-3: #1e90ff; /* Dodger Blue - R */
-    --varna-color-4: #3cb371; /* Medium Sea Green - N */
-    --varna-color-5: #ff1493; /* Deep Pink - A */
+    /* NEW: Bright Accent Color for Header Text */
+    --bright-accent-color: #ffff00; /* Bright Yellow */
+
+    /* VARNA Color Palette */
+    --varna-color-1: #ff6347; 
+    --varna-color-2: #ffd700; 
+    --varna-color-3: #1e90ff; 
+    --varna-color-4: #3cb371; 
+    --varna-color-5: #ff1493; 
 }
 
 /* Global Styles and Typography */
@@ -46,7 +49,7 @@ a {
 }
 
 a:hover {
-    color: #a06e30; /* Darker secondary color on hover */
+    color: #a06e30; 
 }
 
 /* Header Section */
@@ -75,53 +78,42 @@ a:hover {
     z-index: -1;
 }
 
+/* Header H1 (Affects CIVIL and 2025 text) */
 .header h1 {
-    color: var(--light-text-color);
+    color: var(--bright-accent-color); /* BRIGHT YELLOW */
     font-size: 2.5em;
     margin-bottom: 5px;
     position: relative;
 }
 
-/* 🟢 VARNA COLOR STYLES: This is the crucial block */
+/* VARNA COLOR STYLES (Kept separate and unchanged) */
 .header h1 span {
     font-weight: 900; 
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     transition: color 0.3s ease;
 }
 
-.varna-v {
-    color: var(--varna-color-1); /* Red */
-}
-
-.varna-a1 {
-    color: var(--varna-color-2); /* Gold */
-}
-
-.varna-r {
-    color: var(--varna-color-3); /* Blue */
-}
-
-.varna-n {
-    color: var(--varna-color-4); /* Green */
-}
-
-.varna-a2 {
-    color: var(--varna-color-5); /* Pink */
-}
-/* ----------------------------------------------- */
+.varna-v { color: var(--varna-color-1); }
+.varna-a1 { color: var(--varna-color-2); }
+.varna-r { color: var(--varna-color-3); }
+.varna-n { color: var(--varna-color-4); }
+.varna-a2 { color: var(--varna-color-5); }
 
 
+/* Tagline (Changed to Bright Yellow) */
 .tagline {
     font-style: italic;
     font-size: 1.1em;
     margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--bright-accent-color); /* BRIGHT YELLOW */
     position: relative;
 }
 
+/* Organizer Info (Changed to Bright Yellow) */
 .organizer-info {
     font-size: 1.1em;
     font-weight: 700;
+    color: var(--bright-accent-color); /* BRIGHT YELLOW */
     position: relative;
 }
 
@@ -141,16 +133,18 @@ a:hover {
     padding: 0 10px;
 }
 
+/* College Name H2 (Changed to Bright Yellow) */
 .college-info-center h2 {
-    color: var(--light-text-color);
+    color: var(--bright-accent-color); /* BRIGHT YELLOW */
     font-size: 1.5em; 
     margin: 0;
 }
 
+/* Department P (Changed to Bright Yellow) */
 .college-info-center p {
     margin: 0;
     font-size: 1.1em; 
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--bright-accent-color); /* BRIGHT YELLOW */
 }
 
 /* Logo Placeholders/Containers (Holds the <img> tags) */
