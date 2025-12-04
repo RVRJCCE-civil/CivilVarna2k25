@@ -4,12 +4,12 @@
 :root {
     --primary-color: #004d99; /* Deep Blue - Civil/Trust */
     --secondary-color: #0077b6; /* Medium Blue - Modern/Dynamic */
-    --bright-accent-color: #800000; /* Maroon - New Highlight/Energy */
+    --bright-accent-color: #800000; /* Maroon - New Highlight/Energy (as requested) */
     --text-color: #333;
     --background-light: #f4f4f4;
     --background-dark: #2c3e50; /* Darker background for sections */
     --overlay-color: rgba(0, 80, 0, 0.7); /* Dark Green Overlay */
-    --header-image-url: url('rvrjc_campus_bg.jpg'); /* Placeholder image for header background */
+    --header-image-url: url('header_bg_image.jpg'); /* Updated image source (as requested) */
 }
 
 body {
@@ -56,7 +56,7 @@ body {
 }
 
 .college-info-center h2 {
-    color: var(--bright-accent-color);
+    color: var(--bright-accent-color); /* Maroon accent */
     font-size: 1.5em;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -227,7 +227,7 @@ body {
     width: 100%;
     text-align: center;
     background-color: var(--bright-accent-color); /* Maroon accent */
-    color: white; /* Changed button text to white for better contrast */
+    color: white; 
     padding: 10px 0;
     text-decoration: none;
     font-weight: bold;
@@ -282,16 +282,23 @@ body {
 }
 
 .committee-row.two-cols-faculty {
-    /* To set two members side-by-side */
+    /* To set two members side-by-side (Associate Professors under HOD) */
     width: 100%;
     justify-content: space-around;
+    display: flex; /* Ensure Flexbox is applied */
 }
 
 .committee-row.two-cols-faculty .committee-group {
     flex-basis: calc(50% - 30px);
     min-width: 300px;
     text-align: center;
+    border-left: none; /* Remove left border for clean center block */
+    padding: 10px 0;
 }
+.committee-row.two-cols-faculty .committee-group:first-child {
+    border-right: 1px solid #ddd;
+}
+
 
 .committee-row.three-cols-students {
     justify-content: space-around;
@@ -310,7 +317,13 @@ body {
 
 .committee-group.center-item {
     flex-basis: 100%;
+    border-left: none;
 }
+.committee-group.full-width-group {
+     border-bottom: 1px solid #ddd;
+     margin-bottom: 15px;
+}
+
 
 .college-info-block {
     text-align: center;
@@ -389,6 +402,67 @@ body {
 .register-button:hover {
     background-color: #600000; /* Darker Maroon on hover */
 }
+.detail-content-wrapper {
+    display: flex;
+    gap: 40px;
+}
+.detail-instructions {
+    flex: 2;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+.detail-registration {
+    flex: 1;
+    padding-left: 20px;
+}
+.reg-item {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+.reg-label {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+.register-button {
+    text-align: center;
+    padding: 12px;
+    margin: 20px 0;
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.coord-heading {
+    color: var(--primary-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.coord-item {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 2px solid var(--bright-accent-color); /* Maroon accent */
+}
+.coord-item p {
+    margin: 3px 0;
+    font-size: 0.95em;
+}
+.coord-name {
+    font-weight: bold;
+    color: var(--text-color);
+}
+.coord-contact {
+    color: #666;
+}
+
+.coord-contact a { /* Styling for the clickable phone numbers */
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+.coord-contact a:hover {
+    text-decoration: underline;
+}
+
 
 /* --- Responsive adjustments --- */
 @media (max-width: 900px) {
@@ -404,6 +478,10 @@ body {
     }
     .committee-row.two-cols-faculty {
         flex-direction: column; /* Stack vertically on small screens */
+    }
+    .committee-row.two-cols-faculty .committee-group:first-child {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
     }
     .committee-row.three-cols-students {
         flex-direction: column;
