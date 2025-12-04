@@ -54,7 +54,7 @@ a:hover {
     color: #a06e30; 
 }
 
-/* Header Section - IMAGE BACKGROUND with LIGHT OVERLAY */
+/* Header Section - IMAGE BACKGROUND with LIGHT OVERLAY (Used only by index.html now) */
 .header {
     background-image: url('header_bg_image.jpg'); 
     background-size: cover;
@@ -131,11 +131,11 @@ a:hover {
 /* Header Branding Container (Logos and Info) */
 .header-branding-container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     max-width: 1000px;
     margin: 0 auto 15px auto;
-    padding: 0 10px; 
+    padding: 0 10px;
     position: relative;
 }
 
@@ -149,21 +149,21 @@ a:hover {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    overflow: hidden; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
-    flex-shrink: 0; 
-    background-color: white; 
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    background-color: white;
 }
 
 .logo-placeholder img {
-    height: 100%; 
-    width: 100%; 
-    object-fit: contain; 
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 /* Navigation */
 .nav {
-    background-color: #f9e8ed; 
+    background-color: #f9e8ed; /* Light background for the task bar */
     text-align: center;
     padding: 10px 0;
     border-bottom: 2px solid var(--primary-color);
@@ -173,12 +173,12 @@ a:hover {
 }
 
 .nav a {
-    color: var(--primary-color); 
-    margin: 0 15px;
-    padding: 5px 10px;
-    text-transform: uppercase;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    margin: 0 5px;
     font-weight: 700;
-    transition: background-color 0.3s;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
     border-radius: 4px;
 }
 
@@ -187,107 +187,162 @@ a:hover {
     color: var(--light-text-color);
 }
 
-/* Event Grid */
+/* Event Grid Styles */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: #555;
+}
+
 .event-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 20px 0;
+    margin-bottom: 50px;
 }
 
 .event-card {
     background-color: var(--card-bg-color);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.event-content {
-    padding: 15px;
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
 }
 
 .event-image {
     width: 100%;
-    height: 180px; 
-    object-fit: cover; 
+    height: 200px;
+    object-fit: cover;
     display: block;
+}
+
+.event-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.tagline-event {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.description {
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .prize-info {
     font-weight: 700;
-    color: #d9534f; 
+    color: var(--primary-color);
     margin-top: 10px;
-    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
 }
 
 .explore-button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: var(--secondary-color);
-    color: var(--light-text-color);
+    display: block;
     text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 15px;
     border-radius: 4px;
+    margin-top: 15px;
+    font-weight: 700;
     transition: background-color 0.3s;
+    text-transform: uppercase;
 }
 
 .explore-button:hover {
-    background-color: #a06e30;
+    background-color: #600000;
 }
 
-/* Committee Section Styles */
+/* Committee Styles (Index Page) */
+.committee-block {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .committee-row {
     display: flex;
-    justify-content: center; 
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap; 
+    margin-top: 15px;
 }
 
-/* Style for ALL individual committee members' boxes (Faculty and Students) */
 .committee-group {
-    text-align: center;
+    background-color: #f9f9f9;
     padding: 15px;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius);
-    background-color: #fcf4f6; 
-    margin-bottom: 10px; 
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 4px;
+    flex-basis: calc(33.333% - 20px); 
+    min-width: 280px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Styling for the three Student Coordinators */
-.committee-row.three-cols-students .committee-group {
-    flex-basis: calc(33.33% - 20px); 
-    min-width: 200px;
+.committee-group h4 {
+    margin-bottom: 5px;
+    color: var(--secondary-color);
 }
 
-/* Custom layout for HOD + 2 Faculty: HOD uses max-width to look centered, others use flex-basis below it. */
+.committee-group p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+/* Special centering for HOD/Convener */
 .committee-row.hod-and-faculty {
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
-/* Centering for the Committee Headings *****************************/
+/* Centering for the Committee Headings */
 .committee-block h3 {
-    text-align: center !important; /* Force center alignment */
+    text-align: center !important; 
 }
-/* Centering for the Convener block (It's now wrapped in .hod-and-faculty) */
+
+/* Centering for the Convener block */
 .committee-row.hod-and-faculty > .committee-group {
-    margin: 20px auto; /* Auto margin centers the max-width block */
+    margin: 20px auto; 
 }
 
-
-/* DETAIL PAGE STYLES (Kept for completeness) */
-
+/* Detail Page Layout & Styles */
 .detail-content-wrapper {
-    display: flex;
-    flex-direction: column; 
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Main Content takes 2 parts, Registration takes 1 part */
+    gap: 30px;
     margin-top: 30px;
 }
 
 .detail-instructions {
-    order: 1; 
     background-color: var(--card-bg-color);
     padding: 30px;
     border-radius: var(--border-radius);
@@ -295,100 +350,58 @@ a:hover {
 }
 
 .detail-registration {
-    order: 2; 
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.detail-instructions h4 {
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 5px;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-}
-
-.detail-instructions ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-/* Custom bullet point using Maroon color */
-.detail-instructions ul li {
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'><circle fill='%23800000' cx='12' cy='12' r='4'/></svg>") no-repeat left center;
-    background-size: 16px;
-    padding-left: 25px;
-    margin-bottom: 10px;
-    font-size: 1.05em;
-}
-
-/* Registration/Contact Block Styles */
-.reg-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.reg-label {
-    font-size: 0.9em;
-    color: #555;
-    margin: 0;
-    min-width: 120px;
-    font-weight: 500;
-}
-
-.reg-value {
-    font-weight: 700;
-    color: var(--primary-color);
-    margin: 0;
-    font-size: 1.1em;
-}
-
-.coord-heading {
-    border-top: 1px solid #ccc;
-    padding-top: 15px;
-    margin-top: 25px;
-    color: var(--primary-color) !important;
-}
-
-.coord-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    padding: 10px 0;
+    height: fit-content; 
+    border: 1px solid #eee;
+}
+
+.detail-instructions h2 {
+    color: var(--secondary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.detail-instructions ul, .detail-instructions ol {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.detail-instructions li {
+    margin-bottom: 8px;
+}
+
+/* Registration Details styling */
+.reg-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 8px 0;
     border-bottom: 1px dashed #e0e0e0;
 }
 
-.coord-item:last-child {
-    border-bottom: none;
-}
-
-.coord-name {
+.reg-label {
     font-weight: 700;
-    color: var(--primary-color);
-    margin: 0 0 3px 0;
-    font-size: 1.1em;
-}
-
-.coord-designation {
-    font-size: 1em;
     color: #555;
     margin: 0;
 }
 
-.coord-contact {
-    font-weight: 500;
+.reg-value {
     color: var(--primary-color);
-    margin: 5px 0 0 0;
+    font-weight: 500;
+    margin: 0;
 }
 
 .register-button {
     display: block;
-    width: 100%;
-    padding: 15px;
+    padding: 15px 20px;
     background-color: var(--primary-color);
     color: var(--light-text-color);
     text-align: center;
@@ -403,6 +416,50 @@ a:hover {
     background-color: #a00000;
 }
 
+/* NEW COORDINATOR GRID FOR DETAIL PAGES (Faculty & Student side-by-side) */
+.coordinators-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.coord-column h3 {
+    text-align: center;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.coord-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--primary-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.coord-item p {
+    margin: 3px 0;
+    font-size: 0.9em;
+}
+
+.coord-name {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.coord-designation {
+    color: #666;
+}
+
+.coord-contact {
+    font-style: italic;
+    font-size: 0.85em;
+}
+
 /* Footer */
 .footer {
     background-color: #333;
@@ -414,7 +471,26 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .detail-content-wrapper {
+        grid-template-columns: 1fr; /* Stack content and registration on smaller screens */
+    }
+    .coordinators-grid {
+        grid-template-columns: 1fr; /* Stack coordinator columns on smaller screens */
+    }
+}
+
 @media (max-width: 767px) {
+    .header-branding-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-placeholder {
+        margin: 10px 0;
+    }
+    .college-info-center {
+        padding: 10px 0;
+    }
     .committee-row {
         flex-direction: column;
         gap: 10px;
@@ -428,30 +504,10 @@ a:hover {
         max-width: 100%;
         margin-bottom: 10px;
     }
-    .committee-row.hod-and-faculty > .committee-row {
-        flex-direction: column;
-        gap: 10px;
+    .nav a {
+        padding: 8px 10px;
     }
-    .college-info-center h2 {
-        font-size: 1.2em !important; /* Smaller size for mobile */
-    }
-    .header h1 {
-        font-size: 1.8em; /* Smaller size for mobile */
-    }
-    .tagline-combined {
-        font-size: 0.9em;
-    }
-}
-
-@media (min-width: 768px) {
-    .detail-content-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .detail-instructions {
-        flex-basis: 60%;
-    }
-    .detail-registration {
-        flex-basis: 35%;
+    .event-grid {
+        grid-template-columns: 1fr;
     }
 }
