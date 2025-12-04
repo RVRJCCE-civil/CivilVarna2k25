@@ -1,24 +1,13 @@
 /* Custom CSS Variables */
 :root {
-    --primary-color: #800000; /* Maroon - Primary brand color for text/accents */
+    --primary-color: #004d40; /* Dark Teal/Green - Primary brand color */
     --secondary-color: #c08d4a; /* Golden Brown - Accent/Highlight color */
-    --header-bg-color: #FFE0E6; /* Light Pink - Header Background */
     --background-color: #f4f4f9; /* Light Gray/Off-white */
-    --text-color: #333; 
-    --light-text-color: #f9f9f9; 
-    --card-bg-color: #fff; 
+    --text-color: #333; /* Dark text */
+    --light-text-color: #f9f9f9; /* Light text for dark backgrounds */
+    --card-bg-color: #fff; /* White card background */
     --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     --border-radius: 8px;
-
-    /* Header text color (Maroon) */
-    --bright-accent-color: var(--primary-color); 
-
-    /* VARNA Color Palette (For the multi-colored word) */
-    --varna-color-1: #e9967a; 
-    --varna-color-2: #daa520; 
-    --varna-color-3: #87cefa; 
-    --varna-color-4: #3cb371; 
-    --varna-color-5: #ff69b4; 
 }
 
 /* Global Styles and Typography */
@@ -50,87 +39,60 @@ a {
 }
 
 a:hover {
-    color: #a06e30; 
+    color: #a06e30; /* Darker secondary color on hover */
 }
 
 /* Header Section */
 .header {
-    background-color: var(--header-bg-color); /* LIGHT PINK */
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
     padding: 30px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
 }
 
-/* Header H1 */
 .header h1 {
-    color: var(--bright-accent-color); /* MAROON */
+    color: var(--light-text-color);
     font-size: 2.5em;
     margin-bottom: 5px;
-    position: relative;
 }
 
-.header h1 span {
-    font-weight: 900; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    transition: color 0.3s ease;
-}
-
-.varna-v { color: var(--varna-color-1); }
-.varna-a1 { color: var(--varna-color-2); }
-.varna-r { color: var(--varna-color-3); }
-.varna-n { color: var(--varna-color-4); }
-.varna-a2 { color: var(--varna-color-5); }
-
-
-/* Tagline & Organizer Info */
-.tagline, .organizer-info {
-    color: var(--bright-accent-color); /* MAROON */
+.tagline {
+    font-style: italic;
     font-size: 1.1em;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-/* Header Branding Container (Logos and Info) */
-.header-branding-container {
+.organizer-info {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.header-branding {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    max-width: 900px;
-    margin: 0 auto 15px auto;
-    position: relative;
+    margin-bottom: 0; 
 }
 
-.college-info-center {
-    flex-grow: 1;
-    text-align: center;
-    padding: 0 10px;
-}
-
-/* College Name & Dept */
-.college-info-center h2, .college-info-center p {
-    color: var(--bright-accent-color); /* MAROON */
+.college-info h2 {
+    color: var(--light-text-color);
+    font-size: 1.5em; 
     margin: 0;
+    text-align: center;
 }
 
-.logo-placeholder {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.logo-placeholder img {
-    height: 100%; 
-    width: 100%; 
-    object-fit: contain; 
+.college-info p {
+    margin: 0;
+    font-size: 1.1em; 
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Navigation */
 .nav {
-    background-color: #fce8ef; /* Slightly darker pink for nav */
+    background-color: #e0e0e0;
     text-align: center;
     padding: 10px 0;
     border-bottom: 2px solid var(--primary-color);
@@ -140,7 +102,7 @@ a:hover {
 }
 
 .nav a {
-    color: var(--primary-color); /* Maroon links */
+    color: var(--primary-color);
     margin: 0 15px;
     padding: 5px 10px;
     text-transform: uppercase;
@@ -154,6 +116,28 @@ a:hover {
     color: var(--light-text-color);
 }
 
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    width: auto;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
 /* Event Grid */
 .event-grid {
     display: grid;
@@ -165,56 +149,155 @@ a:hover {
 .event-card {
     background-color: var(--card-bg-color);
     border-radius: var(--border-radius);
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-left: 5px solid var(--primary-color);
 }
 
-.event-content {
-    padding: 15px;
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
 }
 
+/* CSS for Event Images */
 .event-image {
     width: 100%;
     height: 180px; 
     object-fit: cover; 
     display: block;
+    filter: brightness(0.9);
+    transition: filter 0.3s;
+}
+
+.event-card:hover .event-image {
+    filter: brightness(1.0);
+}
+
+
+.event-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.tagline-event {
+    color: var(--secondary-color);
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 15px;
+    font-size: 1em;
 }
 
 .prize-info {
     font-weight: 700;
-    color: #d9534f; /* Crimson Red for prize money */
+    color: #d9534f; /* Reddish color for prize money */
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
+.special-prize {
+    border-left-color: #d9534f; /* Highlight border for special prize */
+}
+
+/* Explore Button */
 .explore-button {
-    display: inline-block;
-    padding: 10px 15px;
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: var(--secondary-color);
     color: var(--light-text-color);
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     transition: background-color 0.3s;
+    margin-top: 15px;
 }
 
 .explore-button:hover {
     background-color: #a06e30;
+    color: var(--light-text-color);
+}
+
+/* --- NEW COMMITTEE STRUCTURE CSS --- */
+
+.committee-block {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.committee-block h3 {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+.committee-group {
+    padding: 10px 0;
+    line-height: 1.4;
+}
+
+.committee-group p {
+    margin: 3px 0;
+}
+
+.committee-group strong {
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.committee-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.committee-row .committee-group {
+    flex: 1;
+    text-align: center;
+    border-left: 1px solid #eee;
+    padding-left: 15px;
+}
+
+.committee-row .committee-group:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.committee-row.three-cols .committee-group {
+    flex-basis: 30%;
 }
 
 
-/* DETAIL PAGE STYLES */
+/* --- DETAIL PAGE STYLES --- */
 
 .detail-content-wrapper {
     display: flex;
-    flex-direction: column; 
-    gap: 20px;
+    gap: 40px;
     margin-top: 30px;
 }
 
 .detail-instructions {
-    order: 1; 
+    flex: 3;
     background-color: var(--card-bg-color);
     padding: 30px;
     border-radius: var(--border-radius);
@@ -222,11 +305,12 @@ a:hover {
 }
 
 .detail-registration {
-    order: 2; 
-    background-color: #f9f9f9; 
+    flex: 1;
+    background-color: #e6f7f6; /* Lighter teal background for info box */
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: flex-start; /* Keep info box at the top */
 }
 
 .detail-instructions h4 {
@@ -243,9 +327,8 @@ a:hover {
     padding-left: 0;
 }
 
-/* Custom bullet point using Maroon color */
 .detail-instructions ul li {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%23800000" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%23004d40" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
     background-size: 16px;
     padding-left: 25px;
     margin-bottom: 15px;
@@ -259,11 +342,16 @@ a:hover {
     margin-bottom: 15px;
 }
 
+.reg-item .icon {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
 .reg-label {
     font-size: 0.9em;
     color: #555;
     margin: 0;
-    min-width: 120px;
 }
 
 .reg-value {
@@ -280,15 +368,24 @@ a:hover {
     color: var(--primary-color) !important;
 }
 
-.coord-item {
-    align-items: flex-start;
+.icon-coord {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 15px;
 }
 
 .register-button {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: var(--primary-color);
+    background-color: #d9534f; /* Bright button for registration */
     color: var(--light-text-color);
     text-align: center;
     text-transform: uppercase;
@@ -299,7 +396,7 @@ a:hover {
 }
 
 .register-button:hover {
-    background-color: #a00000;
+    background-color: #c9302c;
 }
 
 /* Footer */
@@ -312,5 +409,55 @@ a:hover {
     font-size: 0.9em;
 }
 
-/* Responsive Design (omitted for brevity, but included in the full implementation) */
-/* ... */
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .event-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .detail-content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    .header-branding {
+        flex-direction: column;
+    }
+    .college-info {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .college-info h2, .college-info p {
+        text-align: center;
+    }
+    .nav a {
+        display: block;
+        margin: 5px 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .event-image {
+        height: 150px;
+    }
+    
+    /* Responsive adjustment for committee rows */
+    .committee-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .committee-row .committee-group {
+        border-left: none;
+        border-bottom: 1px solid #eee;
+        padding-left: 0;
+        text-align: left;
+    }
+    .committee-row .committee-group:last-child {
+        border-bottom: none;
+    }
+}
