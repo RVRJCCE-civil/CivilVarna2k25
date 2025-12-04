@@ -9,12 +9,12 @@
     --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     --border-radius: 8px;
 
-    /* NEW: Varna Color Palette */
-    --varna-color-1: #ff6347; /* Tomato Red */
-    --varna-color-2: #ffd700; /* Gold */
-    --varna-color-3: #1e90ff; /* Dodger Blue */
-    --varna-color-4: #3cb371; /* Medium Sea Green */
-    --varna-color-5: #ff1493; /* Deep Pink */
+    /* NEW: Varna Color Palette (Colors of the rainbow/civil elements) */
+    --varna-color-1: #ff6347; /* Tomato Red - V */
+    --varna-color-2: #ffd700; /* Gold - A */
+    --varna-color-3: #1e90ff; /* Dodger Blue - R */
+    --varna-color-4: #3cb371; /* Medium Sea Green - N */
+    --varna-color-5: #ff1493; /* Deep Pink - A */
 }
 
 /* Global Styles and Typography */
@@ -71,7 +71,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* 50% opacity dark overlay */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: -1;
 }
 
@@ -82,33 +82,33 @@ a:hover {
     position: relative;
 }
 
-/* NEW: VARNA COLOR STYLES */
+/* 🟢 VARNA COLOR STYLES: This is the crucial block */
 .header h1 span {
-    font-weight: 900; /* Make the Varna letters stand out */
+    font-weight: 900; 
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     transition: color 0.3s ease;
 }
 
 .varna-v {
-    color: var(--varna-color-1); 
+    color: var(--varna-color-1); /* Red */
 }
 
 .varna-a1 {
-    color: var(--varna-color-2);
+    color: var(--varna-color-2); /* Gold */
 }
 
 .varna-r {
-    color: var(--varna-color-3);
+    color: var(--varna-color-3); /* Blue */
 }
 
 .varna-n {
-    color: var(--varna-color-4);
+    color: var(--varna-color-4); /* Green */
 }
 
 .varna-a2 {
-    color: var(--varna-color-5);
+    color: var(--varna-color-5); /* Pink */
 }
-/* END VARNA COLOR STYLES */
+/* ----------------------------------------------- */
 
 
 .tagline {
