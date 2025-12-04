@@ -1,0 +1,462 @@
+/* Custom CSS Variables */
+:root {
+    --primary-color: #004d40; /* Dark Teal/Green - Primary brand color */
+    --secondary-color: #c08d4a; /* Golden Brown - Accent/Highlight color */
+    --background-color: #f4f4f9; /* Light Gray/Off-white */
+    --text-color: #333; /* Dark text */
+    --light-text-color: #f9f9f9; /* Light text for dark backgrounds */
+    --card-bg-color: #fff; /* White card background */
+    --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+}
+
+/* Global Styles and Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #a06e30; /* Darker secondary color on hover */
+}
+
+/* Header Section - BACKGROUND IMAGE NAME ASSIGNED */
+.header {
+    background-image: url('civil_engineering_pattern.jpg'); /* Background image for header */
+    background-color: var(--primary-color); /* Fallback color */
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text-color);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark overlay for text readability over background image */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* 50% opacity dark overlay */
+    z-index: -1;
+}
+
+.header h1 {
+    color: var(--light-text-color);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.organizer-info {
+    font-size: 1.1em;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Header Branding Container (Logos and Info) */
+.header-branding-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+    position: relative;
+}
+
+.college-info-center {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.college-info-center h2 {
+    color: var(--light-text-color);
+    font-size: 1.5em; 
+    margin: 0;
+}
+
+.college-info-center p {
+    margin: 0;
+    font-size: 1.1em; 
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Logo Placeholders/Containers (Holds the <img> tags) */
+.logo-placeholder {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 0.8em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensures image stays within the circular border */
+}
+
+/* Navigation */
+.nav {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav a {
+    color: var(--primary-color);
+    margin: 0 15px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+/* Section Titles and Event Grid */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    width: auto;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Event Grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.event-card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 5px solid var(--primary-color);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.event-image {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    display: block;
+    filter: brightness(0.9);
+    transition: filter 0.3s;
+}
+
+.event-card:hover .event-image {
+    filter: brightness(1.0);
+}
+
+
+.event-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.tagline-event {
+    color: var(--secondary-color);
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.prize-info {
+    font-weight: 700;
+    color: #d9534f;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.special-prize {
+    border-left-color: #d9534f;
+}
+
+.explore-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.explore-button:hover {
+    background-color: #a06e30;
+    color: var(--light-text-color);
+}
+
+/* Committee Structure */
+.committee-block {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.committee-block h3 {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+.committee-group {
+    padding: 10px 0;
+    line-height: 1.4;
+}
+
+.committee-group p {
+    margin: 3px 0;
+}
+
+.committee-group strong {
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.committee-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.committee-row .committee-group {
+    flex: 1;
+    text-align: center;
+    border-left: 1px solid #eee;
+    padding-left: 15px;
+}
+
+.committee-row .committee-group:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.committee-row.three-cols .committee-group {
+    flex-basis: 30%;
+}
+
+
+/* DETAIL PAGE STYLES */
+
+.detail-content-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.detail-instructions {
+    flex: 3;
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.detail-registration {
+    flex: 1;
+    background-color: #e6f7f6; 
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
+}
+
+.detail-instructions h4 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.detail-instructions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detail-instructions ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%23004d40" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+    background-size: 16px;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+/* Registration/Contact Block Styles */
+.reg-item, .coord-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reg-item .icon {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.reg-label {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+.reg-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.coord-heading {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    margin-top: 25px;
+    color: var(--primary-color) !important;
+}
+
+.icon-coord {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 15px;
+    min-width: 40px; 
+}
+
+.register-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #d9534f;
+    color: var(--light-text-color);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.register-button:hover {
+    background-color: #c9302c;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .event-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .detail-content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .header-branding-container
