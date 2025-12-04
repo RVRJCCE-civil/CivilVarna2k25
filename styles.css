@@ -2,7 +2,7 @@
 :root {
     --primary-color: #800000; /* Maroon - Primary brand color for text/accents/contacts */
     --secondary-color: #c08d4a; /* Golden Brown - Accent/Highlight color */
-    --header-bg-color: #FFF0F5; /* Lightest Pink Shade (Lavender Blush) - Kept as a variable, but not used as overlay */
+    --header-overlay-color: rgba(255, 240, 245, 0.2); /* Lightest Pink (Lavender Blush) with 20% opacity */
     --background-color: #f4f4f9; /* Light Gray/Off-white */
     --text-color: #333; 
     --light-text-color: #f9f9f9; 
@@ -54,7 +54,7 @@ a:hover {
     color: #a06e30; 
 }
 
-/* Header Section - IMAGE BACKGROUND (NO PINK OVERLAY) */
+/* Header Section - IMAGE BACKGROUND with LIGHT OVERLAY */
 .header {
     background-image: url('header_bg_image.jpg'); 
     background-size: cover;
@@ -65,23 +65,42 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Pseudo-element for the light pink overlay */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--header-overlay-color); /* Lightest Pink with 20% opacity */
+    z-index: 0;
+}
+
 /* All header content must be clearly visible against the image */
-.header-branding-container, .header h1, .tagline, .organizer-info, .college-info-center * {
+.header-branding-container, .header h1, .tagline-combined, .college-info-center * {
     position: relative;
     z-index: 1;
 }
 
-/* Header H1, Tagline, Organizer Info - Set to bright-accent (Maroon) */
+/* College Heading Size (1.5em, same as main event title h1) */
+.college-info-center h2 {
+    font-size: 2.2em !important; /* Made the same size as h1 below */
+    margin-bottom: 5px;
+}
+
+/* Header H1 (Main event title) - Set to bright-accent (Maroon) */
 .header h1 {
     color: var(--bright-accent-color); 
-    font-size: 2.5em;
+    font-size: 2.2em; /* Same size as college heading h2 */
     margin-bottom: 5px;
     position: relative;
+    display: inline-block; /* Allows the combined tagline to sit next to it */
 }
 
 .header h1 span {
     font-weight: 900; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added stronger text shadow for contrast against background image */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
     transition: color 0.3s ease;
 }
 
@@ -92,12 +111,13 @@ a:hover {
 .varna-a2 { color: var(--varna-color-5); }
 
 
-/* Tagline & Organizer Info - Set to bright-accent (Maroon) */
-.tagline, .organizer-info {
+/* Combined Tagline Styling */
+.tagline-combined {
+    display: block; /* Takes up its own line */
     color: var(--bright-accent-color); 
     font-size: 1.1em;
-    margin-bottom: 5px;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Subtle shadow for text contrast */
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* College Info in Header - Set to bright-accent (Maroon) */
@@ -130,9 +150,9 @@ a:hover {
     height: 80px;
     border-radius: 50%;
     overflow: hidden; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow for logo visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
     flex-shrink: 0; 
-    background-color: white; /* Added white background to ensure logos stand out */
+    background-color: white; 
 }
 
 .logo-placeholder img {
@@ -143,7 +163,7 @@ a:hover {
 
 /* Navigation */
 .nav {
-    background-color: #f9e8ed; /* Slightly darker pink for nav */
+    background-color: #f9e8ed; 
     text-align: center;
     padding: 10px 0;
     border-bottom: 2px solid var(--primary-color);
@@ -153,7 +173,7 @@ a:hover {
 }
 
 .nav a {
-    color: var(--primary-color); /* Maroon links */
+    color: var(--primary-color); 
     margin: 0 15px;
     padding: 5px 10px;
     text-transform: uppercase;
@@ -195,7 +215,7 @@ a:hover {
 
 .prize-info {
     font-weight: 700;
-    color: #d9534f; /* Crimson Red for prize money */
+    color: #d9534f; 
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -219,38 +239,41 @@ a:hover {
 /* Committee Section Styles */
 .committee-row {
     display: flex;
-    justify-content: center; /* Center the members group */
+    justify-content: center; 
     gap: 20px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap; 
 }
 
-/* Style for all individual committee members' boxes (HOD, Faculty, Convener) */
-.committee-group, .committee-hod-center {
+/* Style for ALL individual committee members' boxes (Faculty and Students) */
+.committee-group {
     text-align: center;
     padding: 15px;
     border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
-    background-color: #fcf4f6; /* Very light pink tint */
-    margin-bottom: 10px; /* Space between rows/members */
+    background-color: #fcf4f6; 
+    margin-bottom: 10px; 
 }
 
-/* Specific styling for HOD and Convener to ensure centering on wider screens */
-.committee-hod-center {
-    max-width: 500px; 
-    margin: 20px auto; 
-}
-
-/* Styling for the two Associate Professors (side-by-side) */
-.committee-row .committee-group {
-    flex-basis: 45%; 
-    min-width: 250px; 
-}
-
-/* Student Coordinators - using the same centered box style but with a row layout */
-.committee-row.three-cols .committee-group {
-    flex-basis: 30%; 
+/* Styling for the three Student Coordinators */
+.committee-row.three-cols-students .committee-group {
+    flex-basis: calc(33.33% - 20px); 
     min-width: 200px;
+}
+
+/* Custom layout for HOD + 2 Faculty: HOD uses max-width to look centered, others use flex-basis below it. */
+.committee-row.hod-and-faculty {
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Centering for the Committee Headings *****************************/
+.committee-block h3 {
+    text-align: center !important; /* Force center alignment */
+}
+/* Centering for the Convener block (It's now wrapped in .hod-and-faculty) */
+.committee-row.hod-and-faculty > .committee-group {
+    margin: 20px auto; /* Auto margin centers the max-width block */
 }
 
 
@@ -364,7 +387,7 @@ a:hover {
 
 .register-button {
     display: block;
-    width: 93%;
+    width: 100%;
     padding: 15px;
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -396,12 +419,27 @@ a:hover {
         flex-direction: column;
         gap: 10px;
     }
-    .committee-row .committee-group {
+    .committee-row .committee-group,
+    .committee-row.three-cols-students .committee-group {
         flex-basis: 100%;
         min-width: unset; 
     }
-    .committee-row.three-cols .committee-group {
-        flex-basis: 100%;
+    .committee-row.hod-and-faculty > .committee-group {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    .committee-row.hod-and-faculty > .committee-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .college-info-center h2 {
+        font-size: 1.2em !important; /* Smaller size for mobile */
+    }
+    .header h1 {
+        font-size: 1.8em; /* Smaller size for mobile */
+    }
+    .tagline-combined {
+        font-size: 0.9em;
     }
 }
 
