@@ -4,10 +4,12 @@
 :root {
     --primary-color: #004d99; /* Deep Blue - Civil/Trust */
     --secondary-color: #0077b6; /* Medium Blue - Modern/Dynamic */
-    --bright-accent-color: #ffc300; /* Yellow/Gold - Highlight/Energy */
+    --bright-accent-color: #800000; /* Maroon - New Highlight/Energy */
     --text-color: #333;
     --background-light: #f4f4f4;
     --background-dark: #2c3e50; /* Darker background for sections */
+    --overlay-color: rgba(0, 80, 0, 0.7); /* Dark Green Overlay */
+    --header-image-url: url('rvrjc_campus_bg.jpg'); /* Placeholder image for header background */
 }
 
 body {
@@ -19,9 +21,13 @@ body {
     line-height: 1.6;
 }
 
-/* --- Header & Branding --- */
+/* --- Header & Branding (Index Page) --- */
 .header {
-    background: var(--background-dark);
+    /* Use background image with green overlay */
+    background: var(--overlay-color), var(--header-image-url);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
     color: white;
     padding: 20px 5%;
     text-align: center;
@@ -76,7 +82,7 @@ body {
 
 .main-title-container h1 .varna-v,
 .main-title-container h1 .varna-r {
-    color: var(--bright-accent-color);
+    color: var(--bright-accent-color); /* Maroon accent */
 }
 
 .tagline-combined {
@@ -90,7 +96,7 @@ body {
 .date-location-info {
     font-size: 1.1em;
     margin-top: 15px;
-    color: #FFC300;
+    color: var(--bright-accent-color); /* Maroon accent */
 }
 
 /* --- Navigation --- */
@@ -115,7 +121,7 @@ body {
 }
 
 .nav a:hover {
-    color: var(--bright-accent-color);
+    color: var(--bright-accent-color); /* Maroon accent */
 }
 
 /* --- Main Content Container --- */
@@ -131,7 +137,7 @@ body {
     font-size: 2.2em;
     margin-top: 40px;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--bright-accent-color);
+    border-bottom: 3px solid var(--bright-accent-color); /* Maroon accent */
     display: inline-block;
     padding-bottom: 5px;
     width: auto;
@@ -206,22 +212,22 @@ body {
 }
 
 .prize-info {
-    color: #e44d26; /* Distinct color for prizes */
+    color: var(--bright-accent-color); /* Maroon color for prizes */
     font-size: 1.1em;
     font-weight: bold;
     margin-top: 10px;
 }
 
 .special-prize .prize-info {
-    color: #FFC300;
+    color: var(--bright-accent-color); /* Maroon accent */
 }
 
 .explore-button {
     display: block;
     width: 100%;
     text-align: center;
-    background-color: var(--bright-accent-color);
-    color: var(--text-color);
+    background-color: var(--bright-accent-color); /* Maroon accent */
+    color: white; /* Changed button text to white for better contrast */
     padding: 10px 0;
     text-decoration: none;
     font-weight: bold;
@@ -231,7 +237,7 @@ body {
 }
 
 .explore-button:hover {
-    background-color: #cc9900;
+    background-color: #600000; /* Darker Maroon on hover */
     color: white;
 }
 
@@ -270,18 +276,29 @@ body {
 
 .committee-group {
     padding: 10px;
-    border-left: 3px solid var(--bright-accent-color);
+    border-left: 3px solid var(--bright-accent-color); /* Maroon accent */
     flex-basis: calc(33.333% - 20px);
     min-width: 280px;
 }
 
+.committee-row.two-cols-faculty {
+    /* To set two members side-by-side */
+    width: 100%;
+    justify-content: space-around;
+}
+
 .committee-row.two-cols-faculty .committee-group {
-    flex-basis: calc(50% - 15px);
+    flex-basis: calc(50% - 30px);
+    min-width: 300px;
     text-align: center;
 }
 
+.committee-row.three-cols-students {
+    justify-content: space-around;
+}
+
 .committee-row.three-cols-students .committee-group {
-    text-align: center;
+    text-align: center; /* Centering student details */
     flex-basis: calc(33.333% - 20px);
     min-width: 200px;
 }
@@ -321,13 +338,17 @@ body {
 
 /* ---------------------------------
  * DETAIL PAGE SPECIFIC STYLES 
- * (Used by details-1.html to details-6.html)
  * --------------------------------- */
 .detail-page .header {
-    background: var(--secondary-color);
+    /* Use background image with green overlay */
+    background: var(--overlay-color), var(--header-image-url);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
     padding: 40px 20px;
     box-shadow: none;
 }
+
 .detail-page .nav {
     margin-bottom: 30px;
     background-color: #333;
@@ -338,7 +359,7 @@ body {
 }
 .detail-page .tagline-combined {
     font-size: 1.2em;
-    color: var(--bright-accent-color);
+    color: var(--bright-accent-color); /* Maroon accent */
 }
 .detail-page .header-branding-container {
     display: none;
@@ -347,130 +368,26 @@ body {
     padding: 0;
 }
 
-.detail-content-wrapper {
-    display: flex;
-    gap: 30px;
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.detail-instructions {
-    flex: 2;
-    padding-right: 20px;
-    border-right: 1px solid #eee;
-}
-
-.detail-registration {
-    flex: 1;
-    padding-left: 20px;
-}
-
+/* Detail page content adjustments (Maroon accents) */
 .detail-instructions h2 {
     color: var(--primary-color);
-    text-align: left;
-    border-bottom: 2px solid var(--bright-accent-color);
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    font-size: 1.8em;
-    position: static;
-    transform: none;
+    border-bottom: 2px solid var(--bright-accent-color); /* Maroon accent */
 }
 
 .detail-instructions h4 {
-    color: var(--primary-color);
-    margin-top: 25px;
-    border-left: 4px solid var(--bright-accent-color);
-    padding-left: 10px;
-}
-
-.detail-instructions ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    padding-left: 0;
-}
-.detail-instructions ol {
-    margin-left: 20px;
-    padding-left: 0;
+    border-left: 4px solid var(--bright-accent-color); /* Maroon accent */
 }
 
 .prize-info {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #e44d26; 
-    margin-top: 20px;
-}
-
-.detail-registration h3 {
-    color: var(--text-color);
-    font-size: 1.5em;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.reg-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px dotted #eee;
-    font-size: 1em;
-}
-
-.reg-label {
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.reg-value {
-    color: var(--text-color);
+    color: var(--bright-accent-color); /* Maroon accent */
 }
 
 .register-button {
-    display: block;
-    width: 93%;
-    text-align: center;
-    margin-top: 30px;
-    padding: 15px;
-    background-color: var(--bright-accent-color);
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    background-color: var(--bright-accent-color); /* Maroon accent */
 }
 
 .register-button:hover {
-    background-color: #cc9900;
-    color: white;
-}
-
-.coord-heading {
-    color: var(--primary-color) !important;
-    margin-top: 30px;
-    font-size: 1.1em;
-}
-
-.coord-item {
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
-}
-
-.coord-item p {
-    margin: 2px 0;
-    line-height: 1.4;
-}
-
-.coord-name {
-    font-weight: bold;
-}
-
-.coord-contact {
-    font-size: 0.9em;
-    color: #666;
+    background-color: #600000; /* Darker Maroon on hover */
 }
 
 /* --- Responsive adjustments --- */
@@ -485,11 +402,8 @@ body {
     .main-title-container h1 {
         font-size: 2.5em;
     }
-    .events-grid {
-        grid-template-columns: 1fr;
-    }
     .committee-row.two-cols-faculty {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on small screens */
     }
     .committee-row.three-cols-students {
         flex-direction: column;
