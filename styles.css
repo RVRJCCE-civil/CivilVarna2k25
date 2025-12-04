@@ -387,7 +387,7 @@ a:hover {
 
 .register-button {
     display: block;
-    width: 100%;
+    width: 93%;
     padding: 15px;
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -454,4 +454,5 @@ a:hover {
     .detail-registration {
         flex-basis: 35%;
     }
+
 }
