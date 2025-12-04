@@ -105,9 +105,10 @@ a:hover {
     padding: 0 10px;
 }
 
+/* UPDATED: Reduced logo size to give more space to college name */
 .logo-placeholder {
-    width: 80px;
-    height: 80px;
+    width: 60px; 
+    height: 60px; 
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -121,20 +122,21 @@ a:hover {
 }
 
 /* NEW: Header Text Sizing for Equal Titles and Increased Department/Fest Info */
+/* These are largely controlled by inline styles in index.html, but maintained here for context */
 .header h2, .header h1 {
-    font-size: 2.5em; /* Equal, large size for RVR JC College Name and CIVIL VARNA */
+    font-size: 2.5em; 
     margin: 5px 0;
     line-height: 1.1;
 }
 
 .college-info-center p {
-    font-size: 1.3em; /* Increased Department size */
+    font-size: 1.3em; 
     color: var(--bright-accent-color);
     margin: 5px 0 0 0;
 }
 
 .tagline {
-    font-size: 1.6em; /* Increased size for fest description */
+    font-size: 1.6em; 
     font-weight: 500;
     color: var(--secondary-color);
     margin-bottom: 20px;
@@ -282,7 +284,7 @@ a:hover {
     text-align: center;
 }
 
-/* NEW: Committee/Coordinator Box Styling */
+/* UPDATED: Committee/Coordinator Box Styling - Added text-align: center */
 .committee-group, .coord-item {
     padding: 10px; /* Padding for the "text box" effect */
     border: 1px solid #ddd; /* Light border */
@@ -290,6 +292,7 @@ a:hover {
     background-color: var(--background-color); /* Light background for the box */
     margin-bottom: 10px; /* Space between boxes */
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    text-align: center; /* ALIGNMENT FIX: Ensures text inside the box is centered */
 }
 
 /* NEW: Decreased distance between name and contact */
