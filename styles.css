@@ -9,10 +9,10 @@
     --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     --border-radius: 8px;
 
-    /* NEW: Bright Accent Color for Header Text */
-    --bright-accent-color: #ffff00; /* Bright Yellow */
+    /* UPDATED: Header Accent Color changed from Yellow to CRIMSON RED */
+    --bright-accent-color: #d9534f; /* Crimson Red */
 
-    /* VARNA Color Palette */
+    /* VARNA Color Palette (Kept for the multi-colored word) */
     --varna-color-1: #ff6347; 
     --varna-color-2: #ffd700; 
     --varna-color-3: #1e90ff; 
@@ -80,7 +80,7 @@ a:hover {
 
 /* Header H1 (Affects CIVIL and 2025 text) */
 .header h1 {
-    color: var(--bright-accent-color); /* BRIGHT YELLOW */
+    color: var(--bright-accent-color); /* CRIMSON RED */
     font-size: 2.5em;
     margin-bottom: 5px;
     position: relative;
@@ -100,20 +100,20 @@ a:hover {
 .varna-a2 { color: var(--varna-color-5); }
 
 
-/* Tagline (Changed to Bright Yellow) */
+/* Tagline (Changed to Crimson Red) */
 .tagline {
     font-style: italic;
     font-size: 1.1em;
     margin-bottom: 20px;
-    color: var(--bright-accent-color); /* BRIGHT YELLOW */
+    color: var(--bright-accent-color); /* CRIMSON RED */
     position: relative;
 }
 
-/* Organizer Info (Changed to Bright Yellow) */
+/* Organizer Info (Changed to Crimson Red) */
 .organizer-info {
     font-size: 1.1em;
     font-weight: 700;
-    color: var(--bright-accent-color); /* BRIGHT YELLOW */
+    color: var(--bright-accent-color); /* CRIMSON RED */
     position: relative;
 }
 
@@ -133,18 +133,18 @@ a:hover {
     padding: 0 10px;
 }
 
-/* College Name H2 (Changed to Bright Yellow) */
+/* College Name H2 (Changed to Crimson Red) */
 .college-info-center h2 {
-    color: var(--bright-accent-color); /* BRIGHT YELLOW */
+    color: var(--bright-accent-color); /* CRIMSON RED */
     font-size: 1.5em; 
     margin: 0;
 }
 
-/* Department P (Changed to Bright Yellow) */
+/* Department P (Changed to Crimson Red) */
 .college-info-center p {
     margin: 0;
     font-size: 1.1em; 
-    color: var(--bright-accent-color); /* BRIGHT YELLOW */
+    color: var(--bright-accent-color); /* CRIMSON RED */
 }
 
 /* Logo Placeholders/Containers (Holds the <img> tags) */
