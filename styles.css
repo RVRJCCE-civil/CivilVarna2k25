@@ -292,15 +292,16 @@ a:hover {
 
 .committee-row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 10px;
+    gap: 5px;
     margin-top: 15px;
 }
 
 .committee-group {
     background-color: #f9f9f9;
     padding: 15px;
+    padding-left:5px;
+    padding-right:5px;
     border-left: 4px solid var(--secondary-color);
     border-radius: 4px;
     width:fit-content;
@@ -511,3 +512,4 @@ a:hover {
     }
 
 }
+
