@@ -321,7 +321,7 @@ a:hover {
 
 /* Special centering for HOD/Convener */
 .committee-row.hod-and-faculty {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -513,5 +513,6 @@ a:hover {
     }
 
 }
+
 
 
