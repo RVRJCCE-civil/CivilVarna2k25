@@ -294,7 +294,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 20px;
+    gap: 10px;
     margin-top: 15px;
 }
 
@@ -303,8 +303,7 @@ a:hover {
     padding: 15px;
     border-left: 4px solid var(--secondary-color);
     border-radius: 4px;
-    flex-basis: calc(33.333% - 20px); 
-    min-width: 280px;
+    width:fit-content;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -510,4 +509,5 @@ a:hover {
     .event-grid {
         grid-template-columns: 1fr;
     }
+
 }
