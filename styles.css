@@ -295,6 +295,7 @@ a:hover {
     justify-content: space-around;
     gap: 5px;
     margin-top: 15px;
+    flex-direction: row;
 }
 
 .committee-group {
@@ -512,4 +513,5 @@ a:hover {
     }
 
 }
+
 
